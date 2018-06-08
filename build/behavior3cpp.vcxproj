@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{3BB64162-1347-433A-A50A-17ADD6A3E447}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>behavior3cpp</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)\..\lib</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)\..\lib</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../inc/behavior3cpp;../inc/behavior3cpp/core;../inc/behavior3cpp/actions;../inc/behavior3cpp/composites;../inc/behavior3cpp/decorators;../inc/behavior3cpp/loader</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../inc/behavior3cpp;../inc/behavior3cpp/core;../inc/behavior3cpp/actions;../inc/behavior3cpp/composites;../inc/behavior3cpp/decorators;../inc/behavior3cpp/loader</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\behavior3cpp\actions\Error.cpp" />
+    <ClCompile Include="..\src\behavior3cpp\actions\Failer.cpp" />
+    <ClCompile Include="..\src\behavior3cpp\actions\Runner.cpp" />
+    <ClCompile Include="..\src\behavior3cpp\actions\Succeeder.cpp" />
+    <ClCompile Include="..\src\behavior3cpp\actions\Wait.cpp" />
+    <ClCompile Include="..\src\behavior3cpp\b3.cpp" />
+    <ClCompile Include="..\src\behavior3cpp\composites\MemPriority.cpp" />
+    <ClCompile Include="..\src\behavior3cpp\composites\MemRanPriority.cpp" />
+    <ClCompile Include="..\src\behavior3cpp\composites\MemSequence.cpp" />
+    <ClCompile Include="..\src\behavior3cpp\composites\Parallel.cpp" />
+    <ClCompile Include="..\src\behavior3cpp\composites\Priority.cpp" />
+    <ClCompile Include="..\src\behavior3cpp\composites\Sequence.cpp" />
+    <ClCompile Include="..\src\behavior3cpp\core\BaseNode.cpp" />
+    <ClCompile Include="..\src\behavior3cpp\core\BehaviorTree.cpp" />
+    <ClCompile Include="..\src\behavior3cpp\core\Blackboard.cpp" />
+    <ClCompile Include="..\src\behavior3cpp\core\Object.cpp" />
+    <ClCompile Include="..\src\behavior3cpp\core\Tick.cpp" />
+    <ClCompile Include="..\src\behavior3cpp\core\Value.cpp" />
+    <ClCompile Include="..\src\behavior3cpp\decorators\Inverter.cpp" />
+    <ClCompile Include="..\src\behavior3cpp\decorators\Limiter.cpp" />
+    <ClCompile Include="..\src\behavior3cpp\decorators\MaxTime.cpp" />
+    <ClCompile Include="..\src\behavior3cpp\decorators\RanRepeater.cpp" />
+    <ClCompile Include="..\src\behavior3cpp\decorators\Repeater.cpp" />
+    <ClCompile Include="..\src\behavior3cpp\decorators\RepeatUntilFailure.cpp" />
+    <ClCompile Include="..\src\behavior3cpp\decorators\RepeatUntilSuccess.cpp" />
+    <ClCompile Include="..\src\behavior3cpp\loader\BehaviorLoader.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\inc\behavior3cpp\actions\Error.hpp" />
+    <ClInclude Include="..\inc\behavior3cpp\actions\Failer.hpp" />
+    <ClInclude Include="..\inc\behavior3cpp\actions\Runner.hpp" />
+    <ClInclude Include="..\inc\behavior3cpp\actions\Succeeder.hpp" />
+    <ClInclude Include="..\inc\behavior3cpp\actions\Wait.hpp" />
+    <ClInclude Include="..\inc\behavior3cpp\b3.hpp" />
+    <ClInclude Include="..\inc\behavior3cpp\b3def.h" />
+    <ClInclude Include="..\inc\behavior3cpp\BaseNodeFactory.h" />
+    <ClInclude Include="..\inc\behavior3cpp\composites\MemPriority.hpp" />
+    <ClInclude Include="..\inc\behavior3cpp\composites\MemRanPriority.hpp" />
+    <ClInclude Include="..\inc\behavior3cpp\composites\MemSequence.hpp" />
+    <ClInclude Include="..\inc\behavior3cpp\composites\Parallel.hpp" />
+    <ClInclude Include="..\inc\behavior3cpp\composites\Priority.hpp" />
+    <ClInclude Include="..\inc\behavior3cpp\composites\Sequence.hpp" />
+    <ClInclude Include="..\inc\behavior3cpp\core\Action.hpp" />
+    <ClInclude Include="..\inc\behavior3cpp\core\BaseNode.hpp" />
+    <ClInclude Include="..\inc\behavior3cpp\core\BehaviorTree.hpp" />
+    <ClInclude Include="..\inc\behavior3cpp\core\Blackboard.hpp" />
+    <ClInclude Include="..\inc\behavior3cpp\core\Composite.hpp" />
+    <ClInclude Include="..\inc\behavior3cpp\core\Condition.hpp" />
+    <ClInclude Include="..\inc\behavior3cpp\core\Decorator.hpp" />
+    <ClInclude Include="..\inc\behavior3cpp\core\Object.hpp" />
+    <ClInclude Include="..\inc\behavior3cpp\core\Tick.hpp" />
+    <ClInclude Include="..\inc\behavior3cpp\core\Value.hpp" />
+    <ClInclude Include="..\inc\behavior3cpp\decorators\Inverter.hpp" />
+    <ClInclude Include="..\inc\behavior3cpp\decorators\Limiter.hpp" />
+    <ClInclude Include="..\inc\behavior3cpp\decorators\MaxTime.hpp" />
+    <ClInclude Include="..\inc\behavior3cpp\decorators\RanRepeater.hpp" />
+    <ClInclude Include="..\inc\behavior3cpp\decorators\Repeater.hpp" />
+    <ClInclude Include="..\inc\behavior3cpp\decorators\RepeatUntilFailure.hpp" />
+    <ClInclude Include="..\inc\behavior3cpp\decorators\RepeatUntilSuccess.hpp" />
+    <ClInclude Include="..\inc\behavior3cpp\FactoryHolder.h" />
+    <ClInclude Include="..\inc\behavior3cpp\loader\BehaviorLoader.hpp" />
+    <ClInclude Include="..\inc\behavior3cpp\ObjectRegistry.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
