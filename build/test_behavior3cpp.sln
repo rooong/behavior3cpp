@@ -4,6 +4,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test_behavior3cpp", "test_behavior3cpp.vcxproj", "{A8889899-47FB-4731-AC91-269FC4E49A7B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3FD01B5F-3402-4FE9-B2A3-24C60CA0F002} = {3FD01B5F-3402-4FE9-B2A3-24C60CA0F002}
+		{3BB64162-1347-433A-A50A-17ADD6A3E447} = {3BB64162-1347-433A-A50A-17ADD6A3E447}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "jsoncpp", "jsoncpp.vcxproj", "{3FD01B5F-3402-4FE9-B2A3-24C60CA0F002}"
 EndProject
